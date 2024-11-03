@@ -247,6 +247,20 @@ class AppPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.all(20),
+                      ),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                      maxLines: null,
+                    ),
+                  ),
                 ),
                 SizedBox(height: 20),
                 Stack(
