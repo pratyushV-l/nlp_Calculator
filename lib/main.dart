@@ -226,11 +226,11 @@ class AppPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'SMART Calculator',
+                  'Smart Calculator',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 107,
+                    fontSize: 97,
                     fontFamily: 'McLaren',
                     fontWeight: FontWeight.w400,
                     height: 0,
@@ -263,33 +263,30 @@ class AppPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      width: 470, // Reduced width
-                      height: 116, // Reduced height
-                      decoration: ShapeDecoration(
-                        color: Color(0xFFC76A34),
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 5, color: Colors.white),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Logic Later
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFC76A34),
+                    side: BorderSide(width: 5, color: Colors.white),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    Text(
-                      'Calculate!',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 80,
-                        fontFamily: 'McLaren',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
-                      ),
-                    ),
-                  ],
-                ),
+                    fixedSize: const Size(470, 116),
+                  ),
+                  child: Text(
+                    "Calculate",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 80,
+                      fontFamily: 'McLaren',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    )
+                  )
+                )
               ],
             ),
           ),
