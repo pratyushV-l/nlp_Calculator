@@ -168,8 +168,8 @@ class AppPage extends StatelessWidget {
             left: -335,
             top: -80,
             child: Container(
-              width: 711,
-              height: 710,
+              width: 700, // Reduced width
+              height: 680, // Reduced height
               decoration: ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
@@ -182,8 +182,8 @@ class AppPage extends StatelessWidget {
             left: 78,
             top: 864,
             child: Container(
-              width: 711,
-              height: 710,
+              width: 700, // Reduced width
+              height: 680, // Reduced height
               decoration: ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
@@ -196,8 +196,8 @@ class AppPage extends StatelessWidget {
             left: 1547,
             top: -454,
             child: Container(
-              width: 711,
-              height: 711,
+              width: 700, // Reduced width
+              height: 700, // Reduced height
               decoration: ShapeDecoration(
                 color: Color(0xFFC76A34),
                 shape: OvalBorder(
@@ -210,8 +210,8 @@ class AppPage extends StatelessWidget {
             left: 1671,
             top: 387,
             child: Container(
-              width: 710,
-              height: 711,
+              width: 700, // Reduced width
+              height: 700, // Reduced height
               decoration: ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
@@ -238,8 +238,8 @@ class AppPage extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Container(
-                  width: 1053,
-                  height: 440,
+                  width: 1040, // Reduced width
+                  height: 430, // Reduced height
                   decoration: ShapeDecoration(
                     color: Color(0xFFC76A34),
                     shape: RoundedRectangleBorder(
@@ -249,28 +249,32 @@ class AppPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                Container(
-                  width: 484,
-                  height: 151,
-                  decoration: ShapeDecoration(
-                    color: Color(0xFFC76A34),
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 5, color: Colors.white),
-                      borderRadius: BorderRadius.circular(20),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: 470, // Reduced width
+                      height: 116, // Reduced height
+                      decoration: ShapeDecoration(
+                        color: Color(0xFFC76A34),
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(width: 5, color: Colors.white),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  'Calculate!',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 80,
-                    fontFamily: 'McLaren',
-                    fontWeight: FontWeight.w400,
-                    height: 0,
-                  ),
+                    Text(
+                      'Calculate!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 80,
+                        fontFamily: 'McLaren',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
