@@ -116,15 +116,18 @@ class Frame1 extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                Container(
-                  width: 484,
-                  height: 151,
-                  decoration: ShapeDecoration(
-                    color: Color(0xFFC76A34),
+                ElevatedButton(
+                  onPressed: () {
+                    // Add your onPressed code here!
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFC76A34),
+                    disabledBackgroundColor: Colors.white,
+                    side: BorderSide(width: 5, color: Colors.white),
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 5, color: Colors.white),
                       borderRadius: BorderRadius.circular(20),
                     ),
+                    fixedSize: const Size(350, 151),
                   ),
                   child: Center(
                     child: Text(
