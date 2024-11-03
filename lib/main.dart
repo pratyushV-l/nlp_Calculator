@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:google_generative_ai/google_generative_ai.dart';
 
-void main() {
+const apiKey = "AIzaSyAxYTdfqH2JUI4_Y5QPZhKgBCne18_r2Qw";
+
+void AIapi() async {
+  final model = GenerativeModel(
+      model: 'gemini-1.5-flash-latest',
+      apiKey: apiKey,
+  );
+
+  final prompt = 'Answer the math question provided t the fullest extent, answering all quired stuff and questions';
+  final content = [Content.text(prompt)];
+  final response = await model.generateContent(content);
+
+  print(response.text);
+}
+void main(){
+  AIapi();
   runApp(const NLPCalc());
 }
 
@@ -23,13 +39,15 @@ class NLPCalc extends StatelessWidget {
 }
 
 class Homescreen extends StatelessWidget {
+  const Homescreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 1920,
       height: 1080,
       clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(color: Color(0xFFD77137)),
+      decoration: const BoxDecoration(color: Color(0xFFD77137)),
       child: Stack(
         children: [
           Positioned(
@@ -38,7 +56,7 @@ class Homescreen extends StatelessWidget {
             child: Container(
               width: 711,
               height: 710,
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -52,7 +70,7 @@ class Homescreen extends StatelessWidget {
             child: Container(
               width: 710,
               height: 711,
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -66,7 +84,7 @@ class Homescreen extends StatelessWidget {
             child: Container(
               width: 711,
               height: 710,
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -80,7 +98,7 @@ class Homescreen extends StatelessWidget {
             child: Container(
               width: 711,
               height: 711,
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC76A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -92,7 +110,7 @@ class Homescreen extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
+                const Text(
                   'Natural Language Processing',
                   style: TextStyle(
                     color: Colors.white,
@@ -102,8 +120,8 @@ class Homescreen extends StatelessWidget {
                     height: 0,
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   'The Smart\nCalculator',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -114,7 +132,7 @@ class Homescreen extends StatelessWidget {
                     height: 0,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                    Navigator.push(
@@ -123,15 +141,15 @@ class Homescreen extends StatelessWidget {
                    );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFC76A34),
+                    backgroundColor: const Color(0xFFC76A34),
                     disabledBackgroundColor: Colors.white,
-                    side: BorderSide(width: 5, color: Colors.white),
+                    side: const BorderSide(width: 5, color: Colors.white),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     fixedSize: const Size(350, 151),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Start',
                       textAlign: TextAlign.center,
@@ -155,13 +173,15 @@ class Homescreen extends StatelessWidget {
 }
 
 class AppPage extends StatelessWidget {
+  const AppPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 1920,
       height: 1080,
       clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(color: Color(0xFFD77137)),
+      decoration: const BoxDecoration(color: Color(0xFFD77137)),
       child: Stack(
         children: [
           Positioned(
@@ -170,7 +190,7 @@ class AppPage extends StatelessWidget {
             child: Container(
               width: 700, // Reduced width
               height: 680, // Reduced height
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -184,7 +204,7 @@ class AppPage extends StatelessWidget {
             child: Container(
               width: 700, // Reduced width
               height: 680, // Reduced height
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -198,7 +218,7 @@ class AppPage extends StatelessWidget {
             child: Container(
               width: 700, // Reduced width
               height: 700, // Reduced height
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC76A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -212,7 +232,7 @@ class AppPage extends StatelessWidget {
             child: Container(
               width: 700, // Reduced width
               height: 700, // Reduced height
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 color: Color(0xFFC66A34),
                 shape: OvalBorder(
                   side: BorderSide(width: 5, color: Colors.white),
@@ -225,7 +245,7 @@ class AppPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Smart Calculator',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -236,18 +256,18 @@ class AppPage extends StatelessWidget {
                     height: 0,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   width: 1040, // Reduced width
                   height: 430, // Reduced height
                   decoration: ShapeDecoration(
-                    color: Color(0xFFC76A34),
+                    color: const Color(0xFFC76A34),
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 5, color: Colors.white),
+                      side: const BorderSide(width: 5, color: Colors.white),
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  child: Material(
+                  child: const Material(
                     color: Colors.transparent,
                     child: TextField(
                       decoration: InputDecoration(
@@ -262,20 +282,20 @@ class AppPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     // Logic Later
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFC76A34),
-                    side: BorderSide(width: 5, color: Colors.white),
+                    backgroundColor: const Color(0xFFC76A34),
+                    side: const BorderSide(width: 5, color: Colors.white),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     fixedSize: const Size(470, 116),
                   ),
-                  child: Text(
+                  child: const Text(
                     "Calculate",
                     textAlign: TextAlign.center,
                     style: TextStyle(
