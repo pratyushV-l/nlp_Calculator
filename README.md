@@ -2,15 +2,8 @@
 
 My First proper Flutter project. It is an AI NLP Calculator, that turns what you say, into an equation, then proceeds to solve it for you.
 
-## Getting Started
+## Using the Application
 
-This project is a starting point for a Flutter application.
+This application has been designed to be completely portable, meaning that you can simply download it by going to - build\windows\x64\runner\Release, and downloading the entire folder. Alternatively, you can go to the releases page on Github, which will display the folder you need to download.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+From then on, you can simply utilize the application, which has a specially designed prompt, made to help you type in any maths question in natural language, and the application will turn it into an equation and solve it for you.

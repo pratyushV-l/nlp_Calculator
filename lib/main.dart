@@ -3,7 +3,7 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 
 const apiKey = "AIzaSyAxYTdfqH2JUI4_Y5QPZhKgBCne18_r2Qw";
 
-void aiApi(funcPrompt) async {
+void aiApi(String funcPrompt, TextEditingController textController) async {
   final model = GenerativeModel(
       model: 'gemini-1.5-flash-latest',
       apiKey: apiKey,
@@ -13,7 +13,7 @@ void aiApi(funcPrompt) async {
   final content = [Content.text(prompt)];
   final response = await model.generateContent(content);
 
-  print(response.text);
+  textController.text = response.text ?? "No response";
 }
 void main(){
   runApp(const NLPCalc());
@@ -176,6 +176,7 @@ class AppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController textController = TextEditingController();
     return Container(
       width: 1920,
       height: 1080,
@@ -266,14 +267,15 @@ class AppPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  child: const Material(
+                  child: Material(
                     color: Colors.transparent,
                     child: TextField(
-                      decoration: InputDecoration(
+                      controller: textController,
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.all(20),
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                       ),
@@ -284,7 +286,8 @@ class AppPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    aiApi("I want you to look at the question I will provide and properly convert it into an equation, for example if i provide the prompt 'Hey! What's 5 apples + 5 apples, in apples?' you would answer '5+5 = 10 apples'. I want nothind other than the equation, answer(with units), show all the steps of working, but no extra information, just provide me the asked info. If the prompt is not math's related please reply with - 'This prompt is not viable to solve'. With that said & everything in mind, your prompt is ...");
+                    String userInput = textController.text;
+                    aiApi("I want you to look at the question I will provide and properly convert it into an equation, for example if i provide the prompt 'Hey! What's 5 apples + 5 apples, in apples?' you would answer '5+5 = 10 apples'. I want nothind other than the equation, answer(with units), show all the steps of working, but no extra information, just provide me the asked info. If the prompt is not math's related please reply with - 'This prompt is not viable to solve'. With that said & everything in mind, your prompt is $userInput", textController);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFC76A34),
