@@ -3,20 +3,19 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 
 const apiKey = "AIzaSyAxYTdfqH2JUI4_Y5QPZhKgBCne18_r2Qw";
 
-void AIapi() async {
+void AIapi(funcPrompt) async {
   final model = GenerativeModel(
       model: 'gemini-1.5-flash-latest',
       apiKey: apiKey,
   );
 
-  final prompt = 'Answer the math question provided t the fullest extent, answering all quired stuff and questions';
+  final prompt = funcPrompt;
   final content = [Content.text(prompt)];
   final response = await model.generateContent(content);
 
   print(response.text);
 }
 void main(){
-  AIapi();
   runApp(const NLPCalc());
 }
 
@@ -29,7 +28,7 @@ class NLPCalc extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
-      home: Scaffold(
+      home: const Scaffold(
         body: Center(
           child: Homescreen(),
         ),
@@ -137,7 +136,7 @@ class Homescreen extends StatelessWidget {
                   onPressed: () {
                    Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AppPage()),
+                    MaterialPageRoute(builder: (context) => const AppPage()),
                    );
                   },
                   style: ElevatedButton.styleFrom(
@@ -285,7 +284,7 @@ class AppPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Logic Later
+                    AIapi("I want you to look at the question I will provide and properly convert it into an equation, for example if i provide the prompt 'Hey! What's 5 apples + 5 apples, in apples?' you would answer '5+5 = 10 apples'. I want nothind other than the equation, answer(with units), show all the steps of working, but no extra information, just provide me the asked info. With that said, your prompt is ...");
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFC76A34),
