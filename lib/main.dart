@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
-const apiKey = "AIzaSyAxYTdfqH2JUI4_Y5QPZhKgBCne18_r2Qw";
+const apiKey = "hidden!";
 
 void aiApi(String funcPrompt, TextEditingController textController) async {
   final model = GenerativeModel(
