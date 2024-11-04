@@ -1,6 +1,6 @@
 # nlp_calculator_app
 
-A new Flutter project.
+My First proper Flutter project. It is an AI NLP Calculator, that turns what you say, into an equation, then proceeds to solve it for you.
 
 ## Getting Started
 

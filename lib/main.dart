@@ -3,7 +3,7 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 
 const apiKey = "AIzaSyAxYTdfqH2JUI4_Y5QPZhKgBCne18_r2Qw";
 
-void AIapi(funcPrompt) async {
+void aiApi(funcPrompt) async {
   final model = GenerativeModel(
       model: 'gemini-1.5-flash-latest',
       apiKey: apiKey,
@@ -249,13 +249,13 @@ class AppPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 97,
+                    fontSize: 91,
                     fontFamily: 'McLaren',
                     fontWeight: FontWeight.w400,
                     height: 0,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 Container(
                   width: 1040, // Reduced width
                   height: 430, // Reduced height
@@ -284,7 +284,7 @@ class AppPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    AIapi("I want you to look at the question I will provide and properly convert it into an equation, for example if i provide the prompt 'Hey! What's 5 apples + 5 apples, in apples?' you would answer '5+5 = 10 apples'. I want nothind other than the equation, answer(with units), show all the steps of working, but no extra information, just provide me the asked info. With that said, your prompt is ...");
+                    aiApi("I want you to look at the question I will provide and properly convert it into an equation, for example if i provide the prompt 'Hey! What's 5 apples + 5 apples, in apples?' you would answer '5+5 = 10 apples'. I want nothind other than the equation, answer(with units), show all the steps of working, but no extra information, just provide me the asked info. If the prompt is not math's related please reply with - 'This prompt is not viable to solve'. With that said & everything in mind, your prompt is ...");
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFC76A34),
